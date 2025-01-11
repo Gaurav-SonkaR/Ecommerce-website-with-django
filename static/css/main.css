@@ -1,0 +1,174 @@
+
+body{
+    background-color: rgba(192, 252, 182, 0.278);
+    margin: 0;
+    padding: 0;
+    /* max-width: 100%;
+    max-height: 100%; */
+}
+
+
+/* Utility css */
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* header css  */
+
+nav{
+    margin: .2rem 1.5rem  0rem 1.5rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    /* background-color: rgba(159, 159, 159, 0.349); */
+    /* border: 1px solid black; */
+    border-radius: 1rem;
+    display: flex;
+}
+
+.logo{
+    width: 3rem;
+    height: 3rem;
+    justify-content: left;
+}
+.logo:hover{
+    width: 3.6rem;
+    height: 3.6rem;
+    justify-content: left;
+}
+
+.logo-text{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(22, 96, 0);
+    justify-content: left;
+}
+.logo-text:hover{
+    font-size: 2.06rem;
+    font-weight: bold;
+    justify-content: left;
+}
+
+.btn{
+    border: 2px solid rgba(255, 255, 255, 0.504) ;
+    font-size:large;
+    justify-content: right;
+    text-align: right;
+    margin-right: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: rgb(9, 255, 0);
+}
+
+.btn:hover{
+    background-color: rgb(22, 127, 17);
+    color : white;
+}
+
+div a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+div a:hover{
+    color: seashell;
+    text-shadow: aliceblue;
+    text-transform: uppercase;
+}
+
+.nav-menu{
+    color: rgb(0, 255, 17);
+    /* margin: 0;
+    padding: 0%;
+    /* border: 1px solid black; */ 
+    margin: .5rem 1.5rem  1.5rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.83);
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.nav-menu ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mynav-link{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: large;
+    list-style: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mynav-link:hover{
+    font-size: larger;
+}
+
+
+/* Main part */
+
+
+/* products-overview */
+
+.products-overview{
+    /* border: 2px solid rgba(0, 0, 0, 0.425); */
+    border-radius: 1rem;
+    /* margin: 1rem; */
+    background-image: linear-gradient(to bottom right,rgba(130, 255, 234, 0.293), rgb(85, 227, 255));
+}
+
+.products-overview h1{
+    
+    /* padding-top: 1rem; */
+    font-size: x-large;
+    color: rgb(22, 96, 0);
+    /* text-shadow: 0px 0px 50px rgb(255, 255, 255); */
+    font-weight: bold;
+}
+
+.product-overview-block{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0rem 1rem 0rem 1rem; */
+}
+
+.product-overview-block-items{
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-overview-block-items a img{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+/* footer  */
+
+footer{
+    border-top: 1.5px solid #000000ad;
+    margin-left: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.838);
+    color: #b3b3b3; 
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+/* form css */
+.op-0{
+    opacity: 0;
+}
