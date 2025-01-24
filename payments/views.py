@@ -56,7 +56,7 @@ def paymenthandler(request):
             result = razorpay_client.utility.verify_payment_signature(
                 params_dict)
             if result is not None:
-                amount = Cart.objects.get(user=request.user).get_cart_total() * 100  # Convert to paise
+                amount = Cart.objects.get(user=request.user).get_cart_total() * 100  # Convert paise to rupee
                 try:
 
                     # capture the payment

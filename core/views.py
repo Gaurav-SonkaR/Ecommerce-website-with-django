@@ -6,12 +6,19 @@ from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
+from products.models import Products
 
 User = get_user_model()
 
 
 def home(request):
-    return render(request,"index.html")
+    products = Products.objects.all()
+    product_categories = Products.objects.values_list('category', flat=True).distinct()
+    product_info = {
+        'products': products,
+        'product_categories': product_categories
+    }
+    return render(request, "index.html", product_info)
 
 
 def login_page(request):

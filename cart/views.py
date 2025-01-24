@@ -118,6 +118,7 @@ def checkout_view(request):
     }
     return render(request, 'checkout.html', context)
 
+@login_required(login_url='/login/')
 def success(request):
     cart, created = Cart.objects.get_or_create(user=request.user)
     cart.cartitem_set.all().delete()

@@ -6,16 +6,16 @@
 
   <!-- Carousel -->
 
-  <div id="carouselExampleFade" class="carousel slide carousel-fade container container-fluid" data-bs-ride="carousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade container container-fluid " data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/static/images/wallpaper.jpg" class="d-block w-100" alt="...">
+        <img src="{% static 'images/cloth.jpg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/images/logo.png" class="d-block w-100" alt="...">
+        <img src="{% static 'images/electronic.jpg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/images/wallpaper.jpg" class="d-block w-100" alt="...">
+        <img src="{% static 'images/electronic.jpg' %}" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -30,151 +30,29 @@
 
 
   <!-- Containers -->
-  <div class=" container container-fluid  border products-overview mt-4 mb-4 p-4">
-    <h4>Category 1</h4>
+  {% for category in product_categories %}
+  <div class="container container-fluid border products-overview mt-4 mb-4 p-4 bg-light rounded ">
+    <h4><u>{{ category }}</u></h4>
     <div class="container pt-3">
       <div class="row align-items-center">
+        {% for product in products %}
+        {% if product.category == category %}
         <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
+          <div class="card shadow" style="width: 15rem;">
+            <img src="{{ product.image.url }}" class="card-img-top " style="width: 13rem; height: 15rem;" alt="{{ product.name }}">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">{{ product.name }}</h5>
+              <!-- <p class="card-text overflow-hidden">{{ product.description }}</p> -->
+              <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Check it</a>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
-
-  <!-- container 2 -->
-  <div class=" container container-fluid  border products-overview mt-4 mb-3 p-4">
-    <h4>Category 2</h4>
-    <div class="container pt-3">
-      <div class="row align-items-center">
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Container 3 -->
-  <div class=" container container-fluid  border products-overview mt-4 mb-4 p-4">
-    <h4>Category 3</h4>
-    <div class="container pt-3">
-      <div class="row align-items-center">
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 15rem;">
-            <img src="/static/images/logo.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 
 </section>
 {% endblock %}
