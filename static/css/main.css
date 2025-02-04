@@ -1,6 +1,6 @@
 
 body{
-    background-color: rgba(192, 252, 182, 0.278);
+    /* background-color: rgba(192, 252, 182, 0.278); */
     margin: 0;
     padding: 0;
     /* max-width: 100%;
@@ -20,11 +20,11 @@ body{
 /* header css  */
 
 nav{
-    margin: .2rem 1.5rem  0rem 1.5rem;
-    padding: 0.5rem 0.5rem 0rem 0.5rem;
+    /* margin: .2rem 1.5rem  0rem 1.5rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem; */
     /* background-color: rgba(159, 159, 159, 0.349); */
     /* border: 1px solid black; */
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     display: flex;
 }
 
@@ -120,7 +120,7 @@ div a:hover{
     /* border: 2px solid rgba(0, 0, 0, 0.425); */
     border-radius: 1rem;
     /* margin: 1rem; */
-    background-image: linear-gradient(to bottom right,rgba(130, 255, 234, 0.293), rgb(85, 227, 255));
+    background-image: linear-gradient(to bottom right,rgba(86, 219, 197, 0.293), rgba(85, 227, 255, 0.368));
 }
 
 .products-overview h1{
