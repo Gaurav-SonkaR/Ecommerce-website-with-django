@@ -80,6 +80,7 @@ def remove_from_cart(request, item_id):
 
 @login_required(login_url='/login/')
 def checkout_view(request):
+    base_url = request.build_absolute_uri('/')
     cart = get_object_or_404(Cart, user=request.user)
     cart_items = cart.cartitem_set.all().select_related('product')
     
@@ -107,14 +108,16 @@ def checkout_view(request):
             'order_id': order['id'],
             'razorpay_key_id': settings.RAZORPAY_API_KEY,
             'order_amount': order_amount,
-            'order_currency': order_currency
+            'order_currency': order_currency,
+            'base_url': base_url,
         }
         return render(request, 'checkout.html', context)
     
     context = {
         'cart': cart,
         'cart_items': cart_items,
-        'cart_total': cart.get_cart_total()
+        'cart_total': cart.get_cart_total(),
+        'base_url': base_url,
     }
     return render(request, 'checkout.html', context)
 
